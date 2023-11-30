@@ -7,5 +7,11 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
+    class Program
+    {
+        static void Main(string[] args)
+        {
 
+        }
+    }
 }
