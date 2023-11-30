@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using main;
 
 public class Excursions
 {
 	string day;
 	int desiredCost;
-	file excursionOptions;
+	//file excursionOptions;
 	string pickedExcursion;
 
+	/*
 	public void printExcurisonOptions(file excursionOptions)
 	{
 		throw new NotImplementedException();
@@ -36,4 +36,5 @@ public class Excursions
 	{
 		throw new NotImplementedException();
 	}
+	*/
 }

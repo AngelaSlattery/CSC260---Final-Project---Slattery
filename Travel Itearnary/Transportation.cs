@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using main;
-
 public class Transportation
 {
+	/*
 	datetime allocatedTime;
 	string startingPoint;
 	string endingPoint;
@@ -29,4 +28,5 @@ public class Transportation
 	{
 		throw new NotImplementedException();
 	}
+	*/
 }
