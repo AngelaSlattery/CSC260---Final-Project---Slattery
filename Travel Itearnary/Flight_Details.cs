@@ -3,24 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
-public class Flight_Details
+public class Flight_Details : Airport
 {
-	string airline;
-	int flightNum;
-	string location;
-	//date departTime;
-	//date arrivalTime;
-	int flightCost;
+	public string airline;
+	public string flightNum;
+	public string day;
+	public string departTime;
+	public string arrivalTime;
+	public int flightCost;
 
-	public void printFlightCost()
-	{
-		throw new NotImplementedException();
-	}
 
-	public void flightCheckIn()
+	public void printFlight()
 	{
-		throw new NotImplementedException();
+		Console.WriteLine("Airline: " + airline + "\n");
+        Console.WriteLine("Flight Number: " + flightNum + "\n");
+        Console.WriteLine("Day: " + day + "\n");
+        Console.WriteLine("Depart Time: " + departTime + "\n");
+        Console.WriteLine("Arrival Time: " + arrivalTime + "\n");
+        Console.WriteLine("Flight Cost: " + flightCost + "\n\n");
+    }
+
+	public void bookFlight()
+	{
+
 	}
 
 }

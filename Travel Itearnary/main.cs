@@ -7,39 +7,8 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    internal class Main
+    class main
     {
-        public bool printMenu(Travel_Itearnary Trip1)
-        {
-            bool endProgram = false;
-            string x;
-            Console.WriteLine("1. Book Excursion\n");
-            Console.WriteLine("2. Book Flight\n");
-            Console.WriteLine("3. Book Transportation\n");
-            Console.WriteLine("4. Print Itearnary\n");
-            Console.WriteLine("5. End Program\n");
-            x = Console.ReadLine();
-
-            switch (x)
-            {
-                case "1":
-                    Trip1.bookExcursion();
-                    break;
-                case "2":
-                    Trip1.bookFlight();
-                    break;
-                case "3":
-                    break;
-                case "4":
-                    Trip1.printItearnary();
-                    break;
-                case "5":
-                    endProgram = true;
-                    break;
-
-            }
-            return endProgram;
-        }
         static void Main(string[] args)
         {
             bool end = false;
@@ -60,10 +29,11 @@ namespace FinalProject
             Travel_Itearnary Trip1 = new Travel_Itearnary(loc, pplnum, bud, day);
             while (end == false)
             {
-                end = printMenu(Trip1);
+                end = Trip1.printMenu();
             }
 
+            return;
         }
-
     }
+    
 }

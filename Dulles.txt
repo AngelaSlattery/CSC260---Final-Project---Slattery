@@ -1,0 +1,22 @@
+United
+Flight# 12849
+Depart Time 9:00
+Arrival Time 2:00
+Cost 356
+Seats Available 4
+
+
+American
+Flight# 09303
+Depart Time 10:00
+Arrival Time 3:00
+Cost 546
+Seats Available 10
+
+
+Frontier
+Flight# 34567
+Depart Time 11:00
+Arrival Time 2:30
+Cost 120
+Seat Available 6
