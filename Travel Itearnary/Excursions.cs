@@ -8,33 +8,32 @@ public class Excursions
 {
 	string day;
 	int desiredCost;
-	//file excursionOptions;
 	string pickedExcursion;
 
-	/*
-	public void printExcurisonOptions(file excursionOptions)
+	
+	public void printExcurisonOptions()
 	{
 		throw new NotImplementedException();
 	}
 
-	public string cheapestOption(file excursionOptions)
+	public string cheapestOption()
 	{
 		throw new NotImplementedException();
 	}
 
-	public void bestReviews(file excursionOptions)
+	public void bestReviews()
 	{
 		throw new NotImplementedException();
 	}
 
-	public void familyFriendly(file excursionOptions)
+	public void familyFriendly()
 	{
 		throw new NotImplementedException();
 	}
 
-	public void excursionDetails(file excursionOptions)
+	public void excursionDetails()
 	{
 		throw new NotImplementedException();
 	}
-	*/
+	
 }

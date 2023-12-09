@@ -11,6 +11,9 @@ public class Excursion_Option
 	bool daysOpen;
 	int transportationCost;
 
+	public Excursion_Option()
+	{
+    }
 	public void confirmExecursion()
 	{
 		throw new NotImplementedException();

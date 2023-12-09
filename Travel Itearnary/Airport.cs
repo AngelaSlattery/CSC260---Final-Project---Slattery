@@ -12,7 +12,7 @@ public class Airport
 	public string location;
 	public int seatNum;
     public Flight_Details too = new Flight_Details();
-    public  Flight_Details reTurn = new Flight_Details();
+    public Flight_Details reTurn = new Flight_Details();
 
     public Airport()
 	{
@@ -30,9 +30,8 @@ public class Airport
         Console.WriteLine("Which airport do you want?\n");
         string location = Console.ReadLine();
     }
-	public void bookDestinationFlight( int numDays, int numPpl)
+	public int bookDestinationFlight(int budgetTotal)
 	{
-		seatNum = numPpl;
         IEnumerable<string> flights;
         IEnumerable<string> book;
         //Find out how to get dulles as string
@@ -42,50 +41,125 @@ public class Airport
 
 		//In this scenario, all flights are the exact same everyday.  This obviously could be different if I had more sample files
 		//for particular days
-		Console.WriteLine(flightFilePath);
 		flights = File.ReadAllLines(flightFilePath);
         Console.WriteLine(String.Join(Environment.NewLine, flights));
 		Console.WriteLine("\n\nWhat is your desired flight number?");
 		string flightNum = Console.ReadLine();
 
-        //See if you can make it so these values won't change
-		too.flightNum = flightNum;
+
+    //See if you can make it so these values won't change
+        too.flightNum = flightNum;
 		too.day = "January8";
 		too.airline = "United";
 		too.departTime = "9:00";
 		too.arrivalTime = "2:00";
 		too.flightCost = 356;
-        flightMenu();
-		
+        too.book = true;
+
+        Console.WriteLine("Book? Y or N\n");
+        string x = Console.ReadLine();
+        if (x == "Y")
+        {
+            int minus = budgetTotal - (too.flightCost * seatNum);
+            if (  minus >= 0)
+            {
+                too.bookFlight();
+                return minus;
+            }
+            else
+            {
+                Console.WriteLine("The flight selected is too expensive");
+                return budgetTotal;
+            }
+                
+        }
+        return budgetTotal;
     }
 
-	public void bookReturnFlight()
+	public int bookReturnFlight(int budgetTotal)
 	{
+        IEnumerable<string> flights;
+        IEnumerable<string> book;
 
-	}
+        //Find out how to get dulles as string
+        //File path needs to be FIXED!!!!!!!
+        string flightFilePath = @"C:\Users\DSU\OneDrive - Dakota State University\Desktop\Fall 2023\Final Project\DullesReturn.txt";
+        string fileName = String.Concat(flightFilePath, location, ".txt");
 
-	public void boardingPass()
+        //In this scenario, all flights are the exact same everyday.  This obviously could be different if I had more sample files
+        //for particular days
+        flights = File.ReadAllLines(flightFilePath);
+        Console.WriteLine(String.Join(Environment.NewLine, flights));
+        Console.WriteLine("\n\nWhat is your desired flight number?");
+        string flightNum = Console.ReadLine();
+
+        //See if you can make it so these values won't change
+        reTurn.flightNum = flightNum;
+        reTurn.day = "January10";
+        reTurn.airline = "United";
+        reTurn.departTime = "9:00";
+        reTurn.arrivalTime = "2:00";
+        reTurn.flightCost = 256;
+
+        Console.WriteLine("Book? Y or N\n");
+        string x = Console.ReadLine();
+        if (x == "Y")
+        {
+            int minus = budgetTotal - (too.flightCost*seatNum);
+            if (minus >= 0)
+            {
+                too.bookFlight();
+                return minus;
+            }
+            else
+            {
+                Console.WriteLine("The flight selected is too expensive");
+                return budgetTotal;
+            }
+
+        }
+        return budgetTotal;
+    }
+
+	public int flightMenu( int budgetTotal)
 	{
-		throw new NotImplementedException();
-	}
-
-	public void flightMenu()
-	{
+        int y;
         Console.WriteLine("Which option would you like to pick: \n");
-        Console.WriteLine("1. Print Flights\n");
-        Console.WriteLine("2. Search Return Flight\n");
-        Console.WriteLine("3. Return to Menu\n");
+        Console.WriteLine("1. Book Destination Flights\n");
+        Console.WriteLine("2. Book Return Flight\n");
+        Console.WriteLine("3. Print Tickets\n");
+        Console.WriteLine("4. Return to Menu\n");
         string x = Console.ReadLine();
         switch (x)
         {
             case "1":
-                too.printFlight();
-                break;
+                y = bookDestinationFlight(budgetTotal);
+                return y;
             case "2":
-                bookReturnFlight();
-                break;
+                y = bookReturnFlight(budgetTotal);
+                return y;
             case "3":
-                return;
+                if ( too.book == true )
+                {
+                    too.printFlight();
+                }
+                else
+                {
+                    Console.WriteLine("Destination Flight Not Booked\n");
+                }
+                if (reTurn.book == true)
+                {
+                    reTurn.printFlight();
+                }
+                else
+                {
+                    Console.WriteLine("Return Flight Not Booked\n");
+                }
+                Console.WriteLine("\n\n\n\n");
+                break;
+            case "4":
+                return budgetTotal;
         }
+        return budgetTotal;
     }
 }

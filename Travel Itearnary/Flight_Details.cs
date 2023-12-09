@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-public class Flight_Details : Airport
+public class Flight_Details
 {
+	public bool book = false;
 	public string airline;
 	public string flightNum;
 	public string day;
@@ -26,6 +27,11 @@ public class Flight_Details : Airport
     }
 
 	public void bookFlight()
+	{
+        book = true;
+
+    }
+	public void checkIn()
 	{
 
 	}
