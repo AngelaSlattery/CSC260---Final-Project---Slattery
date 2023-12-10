@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 public class Travel_Itearnary
 {
-	public string location;
-	public int howManyTravelers;
-	int budgetTotal;
+    public string location;
+    public int howManyTravelers;
+    int budgetTotal;
     public int remainingBudget;
-	public int howManyDays;
+    public int howManyDays;
     public Airport Airport1 = new Airport();
-    public List<Excursions> excursion1 = new List<Excursions>();
+    public Excursions excursion1 { get; set;}
 
     public Travel_Itearnary( string location, int people, int budget, int day)
     {
@@ -22,16 +22,16 @@ public class Travel_Itearnary
         this.budgetTotal = budget;
         this.howManyDays = day;
         this.remainingBudget = budget;
-    }
+        excursion1 = new Excursions( day, location, howManyTravelers);
+}
 
 	public void bookFlight()
 	{
         Airport1.pickAirport();
         Airport1.seatNum = howManyTravelers;
-
         Airport1.location = location;
-        Console.WriteLine(remainingBudget + "\n");
-        budgetTotal = Airport1.flightMenu( this.remainingBudget );
+
+        remainingBudget = Airport1.flightMenu( this.remainingBudget );
 	}
 
 	public void printItearnary()
@@ -45,13 +45,8 @@ public class Travel_Itearnary
     public void bookExcursion()
     {
         //Make it off the locations of the city
-        Console.WriteLine("Excursions Available: \n");
-        IEnumerable<string> excurAvail;
-        string excursionFile = @"C:\Users\DSU\OneDrive - Dakota State University\Desktop\Fall 2023\Final Project\ExcursionList.txt";
-        excurAvail = File.ReadAllLines(excursionFile);
-        Console.WriteLine(String.Join(Environment.NewLine, excurAvail));
-        excursion1.Add(new Excursions());
-        
+        remainingBudget = excursion1.excursions_Menu( this.remainingBudget);
+
     }
 
     public void bookTransportation()

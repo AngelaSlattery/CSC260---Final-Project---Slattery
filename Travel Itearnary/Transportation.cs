@@ -9,8 +9,6 @@ public class Transportation
 	datetime allocatedTime;
 	string startingPoint;
 	string endingPoint;
-	string cheapest;
-	string fastest;
 	date start;
 	date end;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Bus
+public class Bus : Transportation
 {
 	int stopsNeeded;
 	int totalCost;

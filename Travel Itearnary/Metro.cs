@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class Metro
+public class Metro : Transportation
 {
 	int stopsNeeded;
 	int totalCost;

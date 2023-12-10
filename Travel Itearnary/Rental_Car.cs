@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Rental_Car
+public class Rental_Car : Transportation
 {
 	int totalCost;
 	bool downPay;

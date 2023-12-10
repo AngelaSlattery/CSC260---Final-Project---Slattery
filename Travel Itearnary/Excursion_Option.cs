@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 public class Excursion_Option
 {
-	string name;
-	int excursionCost;
-	bool daysOpen;
-	int transportationCost;
+	public string name;
+	public int excursionCost;
+	bool booked;
+	string day;
 
-	public Excursion_Option()
+
+
+	public Excursion_Option( string name, int cost  )
 	{
+		this.name = name;
+		this.excursionCost = cost;
     }
-	public void confirmExecursion()
-	{
-		throw new NotImplementedException();
-	}
-
-	public void printFlightCost()
+	public void printConfirmation()
 	{
 		throw new NotImplementedException();
 	}
