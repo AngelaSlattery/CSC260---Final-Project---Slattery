@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
+
+//Inheritance Example along with Excursion_Option
 public class Excursions
 {
     string location;
-	string day;
-    int numppl;
+    string day;
+    public int numppl;
+
 	public List<Excursion_Option> bookedExcursions { get; set; }
 
 	public Excursions( int numDays, string location, int numppl)
@@ -59,19 +62,45 @@ public class Excursions
         string x = Console.ReadLine();
 
         //These are hard coded in values because I didnt have the resources to do read in files
+        //You can read in from a file 
         if ( String.Compare( x, "Monument") == 0 )
         {
             int cost = 200;
+            string con = "24251";
             Excursion_Option exc = new Excursion_Option(x, cost);
-            exc.printConfirmation();
-            return budget - (cost * numppl);
+            exc.printConfirmation(cost, con, numppl);
+
+            budget = budget - (cost * numppl);
         }
         if (String.Compare(x, "Art Museum") == 0)
         {
             int cost = 150;
+            string con = "24221";
             Excursion_Option exc = new Excursion_Option(x, cost);
-            exc.printConfirmation();
-            return budget - (cost * numppl);
+            exc.printConfirmation(cost, con, numppl);
+
+            budget = budget - (cost * numppl);
+        }
+
+        bool validInput = false;
+        while ( validInput == false )
+        {
+            Console.WriteLine("Would you like to book transportation?");
+            string trav = Console.ReadLine();
+            if (trav == "Y")
+            {
+                //Transportation ride = new Transportation();
+
+                validInput = true;
+            }
+            else if (trav == "N")
+            {
+                validInput = true;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input");
+            }
         }
         return budget;
 	}

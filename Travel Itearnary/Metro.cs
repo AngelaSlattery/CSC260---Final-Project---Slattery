@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 public class Metro : Transportation
 {
-	int stopsNeeded;
+    int stopsNeeded;
 	int totalCost;
 
-	public void confirmTicket()
+
+    public void confirmTicket()
 	{
 		throw new NotImplementedException();
 	}

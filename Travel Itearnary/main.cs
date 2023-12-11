@@ -25,6 +25,14 @@ namespace FinalProject
             string strinday = Console.ReadLine();
             int day = Convert.ToInt32(strinday);
 
+            payment pay = new payment();
+            Console.WriteLine("What is your card number?\n");
+            pay.Card = Console.ReadLine();
+            Console.WriteLine("Security Code?\n");
+            pay.security = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Expiration Date\n");
+            pay.exp = Convert.ToInt32(Console.ReadLine());
+
             //Create Trip1 with input data
             Travel_Itearnary Trip1 = new Travel_Itearnary(loc, pplnum, bud, day);
             while (end == false)

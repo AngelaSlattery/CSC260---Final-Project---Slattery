@@ -9,7 +9,8 @@ public class Bus : Transportation
 	int stopsNeeded;
 	int totalCost;
 
-	public void confirmTicket()
+  
+    public void confirmTicket()
 	{
 		throw new NotImplementedException();
 	}

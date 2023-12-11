@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 public class Rental_Car : Transportation
 {
-	int totalCost;
+    int totalCost;
 	bool downPay;
 	int totalDaysNeeded;
 
-	public void confirmTicket()
+
+    public void confirmTicket()
 	{
 		throw new NotImplementedException();
 	}

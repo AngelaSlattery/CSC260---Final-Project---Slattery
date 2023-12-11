@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="main.cs" />
+    <Compile Include="Payment.cs" />
     <Compile Include="Travel_Itearnary.cs" />
     <Compile Include="Airport.cs" />
     <Compile Include="Flight_Details.cs" />

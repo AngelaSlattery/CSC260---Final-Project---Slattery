@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+//I want my transportation class to be polymorphism with the forms along with abstract
 public class Transportation
-{
-	/*
-	datetime allocatedTime;
+{ 
+	int allocatedTime;
 	string startingPoint;
 	string endingPoint;
-	date start;
-	date end;
+	string startTime;
+	string endTime;
 
-	public string cheapestOption(Rental_Car rentalCar, Bus bus, Metro metro)
+	//public abstract void book();
+    public string cheapestOption(Rental_Car rentalCar, Bus bus, Metro metro)
 	{
 		throw new NotImplementedException();
 	}
@@ -26,5 +28,5 @@ public class Transportation
 	{
 		throw new NotImplementedException();
 	}
-	*/
+	
 }
