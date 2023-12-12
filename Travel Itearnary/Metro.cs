@@ -37,7 +37,7 @@ class Metro : Transportation
         Console.WriteLine("Start: ", this.startingPoint, "\nEnd: ", this.endingPoint);
         Console.WriteLine("\nStops Needed: ", this.stopsNeeded);
         Console.WriteLine("\nTicket Confirmation: ", ticketConfirm);
-        Console.WriteLine("\n\n\n");
+		Console.WriteLine("\n\n\n");
     }
 
 }
