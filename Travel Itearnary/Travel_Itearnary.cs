@@ -12,6 +12,7 @@ public class Travel_Itearnary
     int budgetTotal;
     public int remainingBudget;
     public int howManyDays;
+    bool rental_car = false;
     public Airport Airport1 = new Airport();
     public Excursions excursion1 { get; set;}
 
@@ -51,7 +52,17 @@ public class Travel_Itearnary
 
     public void bookTransportation()
     {
-        
+        if (rental_car == false)
+        {
+            Console.WriteLine("Would you like to rent a rental car? Y or N\n");
+            string rentalC = Console.ReadLine();
+            if(rentalC == "Y")
+            {
+                rental_car = true;
+                remainingBudget = remainingBudget - 600;
+            }
+        }
+
     }
     
     public bool printMenu()

@@ -10,6 +10,7 @@ class Metro : Transportation
 	private int stopsNeeded;
 	private int totalCost;
 	public bool booked;
+	string ticketConfirm;
 
 	public override int bookTransport( int num, int budget)
 	{
@@ -20,14 +21,19 @@ class Metro : Transportation
 		if(totalCost >= budget)
 		{
 			booked = true;
+			ticketConfirm = "1242DVe2";
 			budget = budget - totalCost;
 		}
 		return budget;
 	}
 
-	public void printInformation()
+	public override void printInformation()
 	{
-		throw new NotImplementedException();
-	}
+        Console.WriteLine("Transportation: \n");
+        Console.WriteLine("Start: ", this.startingPoint, "\nEnd: ", this.endingPoint);
+        Console.WriteLine("\nStops Needed: ", this.stopsNeeded);
+        Console.WriteLine("\nTicket Confirmation: ", ticketConfirm);
+        Console.WriteLine("\n\n\n");
+    }
 
 }

@@ -12,10 +12,10 @@ abstract class Transportation
 	public string endingPoint;
 	public int startTime;
 	public int endTime;
-	bool rental_car = false;
 
 	//public abstract void book();
 	public abstract int bookTransport(int num, int totalCost);
+	public abstract void printInformation();
 
 	public Transportation()
 	{

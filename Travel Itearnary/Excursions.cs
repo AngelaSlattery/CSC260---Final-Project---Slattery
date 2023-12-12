@@ -85,11 +85,11 @@ public class Excursions
         bool validInput = false;
         while ( validInput == false )
         {
-            Console.WriteLine("Would you like to book transportation?");
+            Console.WriteLine("Would you like to book public transportation?");
             string trav = Console.ReadLine();
             if (trav == "Y")
             {
-                Console.WriteLine("What form of transportation? Metro, Bus, Rental Car");
+                Console.WriteLine("What form of transportation? Metro, Bus");
                 string rideType = Console.ReadLine();
                 bool validInput2 = false;
                 while (validInput2 == false)
@@ -104,6 +104,7 @@ public class Excursions
                         ride.startTime = 1;
                         ride.endTime = 3;
                         budget = ride.bookTransport(numppl, budget);
+                        ride.printInformation();
                         validInput2 = true;
                     }
                     else if (rideType == "Bus")
@@ -114,22 +115,12 @@ public class Excursions
                         ride.startingPoint = x;
                         ride.endingPoint = "hotel";
                         ride.startTime = 1;
-                        ride.endTime = 3;
+                        ride.endTime = 4;
                         budget = ride.bookTransport(numppl, budget);
+                        ride.printInformation();
                         validInput2 = true;
                     }
-                    else if (rideType == "Rental Car")
-                    {
-                        Transportation ride = new Rental_Car();
-                        //This where you could read in from a file off the location, instead I chose to make this hard-coded
-                        ride.allocatedTime = 2;
-                        ride.startingPoint = x;
-                        ride.endingPoint = "hotel";
-                        ride.startTime = 1;
-                        ride.endTime = 3;
-                        budget = ride.bookTransport(numppl, budget);
-                        validInput2 = true;
-                    }
+                    
                 }
                 validInput = true;
             }
