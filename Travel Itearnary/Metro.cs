@@ -5,19 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class Metro : Transportation
+class Metro : Transportation
 {
-    int stopsNeeded;
-	int totalCost;
+	private int stopsNeeded;
+	private int totalCost;
+	public bool booked;
 
-
-    public void confirmTicket()
+	public override int bookTransport( int num, int budget)
 	{
-		throw new NotImplementedException();
+		stopsNeeded = this.startTime - this.endTime;
+		stopsNeeded = stopsNeeded * 15;
+		totalCost = (stopsNeeded * 1);
+		totalCost = totalCost * num;
+		if(totalCost >= budget)
+		{
+			booked = true;
+			budget = budget - totalCost;
+		}
+		return budget;
 	}
 
 	public void printInformation()
 	{
 		throw new NotImplementedException();
 	}
+
 }

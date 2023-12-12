@@ -5,28 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 //I want my transportation class to be polymorphism with the forms along with abstract
-public class Transportation
+abstract class Transportation
 { 
-	int allocatedTime;
-	string startingPoint;
-	string endingPoint;
-	string startTime;
-	string endTime;
+	public int allocatedTime;
+	public string startingPoint;
+	public string endingPoint;
+	public int startTime;
+	public int endTime;
+	bool rental_car = false;
 
 	//public abstract void book();
-    public string cheapestOption(Rental_Car rentalCar, Bus bus, Metro metro)
+	public abstract int bookTransport(int num, int totalCost);
+
+	public Transportation()
 	{
-		throw new NotImplementedException();
+
 	}
 
-	public string fastestOption(Rental_Car rentalCar, Bus bus, Metro metro)
-	{
-		throw new NotImplementedException();
-	}
-
-	public void bookTransport()
-	{
-		throw new NotImplementedException();
-	}
 	
 }

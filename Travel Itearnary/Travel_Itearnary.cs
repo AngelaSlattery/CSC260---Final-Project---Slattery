@@ -14,7 +14,6 @@ public class Travel_Itearnary
     public int howManyDays;
     public Airport Airport1 = new Airport();
     public Excursions excursion1 { get; set;}
-    public Transportation transport { get; set; }
 
     public Travel_Itearnary( string location, int people, int budget, int day)
     {
@@ -24,7 +23,7 @@ public class Travel_Itearnary
         this.howManyDays = day;
         this.remainingBudget = budget;
         excursion1 = new Excursions( day, location, howManyTravelers);
-        transport = new Transportation();
+        //transport = new Transportation();
 }
 
 	public void bookFlight()

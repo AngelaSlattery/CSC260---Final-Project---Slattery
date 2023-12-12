@@ -89,8 +89,48 @@ public class Excursions
             string trav = Console.ReadLine();
             if (trav == "Y")
             {
-                //Transportation ride = new Transportation();
-
+                Console.WriteLine("What form of transportation? Metro, Bus, Rental Car");
+                string rideType = Console.ReadLine();
+                bool validInput2 = false;
+                while (validInput2 == false)
+                {
+                    if (rideType == "Metro")
+                    {
+                        Transportation ride = new Metro();
+                        //This where you could read in from a file off the location, instead I chose to make this hard-coded
+                        ride.allocatedTime = 2;
+                        ride.startingPoint = x;
+                        ride.endingPoint = "hotel";
+                        ride.startTime = 1;
+                        ride.endTime = 3;
+                        budget = ride.bookTransport(numppl, budget);
+                        validInput2 = true;
+                    }
+                    else if (rideType == "Bus")
+                    {
+                        Transportation ride = new Bus();
+                        //This where you could read in from a file off the location, instead I chose to make this hard-coded
+                        ride.allocatedTime = 2;
+                        ride.startingPoint = x;
+                        ride.endingPoint = "hotel";
+                        ride.startTime = 1;
+                        ride.endTime = 3;
+                        budget = ride.bookTransport(numppl, budget);
+                        validInput2 = true;
+                    }
+                    else if (rideType == "Rental Car")
+                    {
+                        Transportation ride = new Rental_Car();
+                        //This where you could read in from a file off the location, instead I chose to make this hard-coded
+                        ride.allocatedTime = 2;
+                        ride.startingPoint = x;
+                        ride.endingPoint = "hotel";
+                        ride.startTime = 1;
+                        ride.endTime = 3;
+                        budget = ride.bookTransport(numppl, budget);
+                        validInput2 = true;
+                    }
+                }
                 validInput = true;
             }
             else if (trav == "N")
