@@ -1,2 +1,11 @@
-Monuments
-Cost $350
+Monument Tour
+Cost $202
+
+Art Museum
+Cost $152
+
+Smithsonian National Air and Space Museum
+Cost $0
+
+Night Tours
+Cost $53

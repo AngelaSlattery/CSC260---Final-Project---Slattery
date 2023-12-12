@@ -60,32 +60,62 @@ public class Excursions
 	{
         Console.WriteLine("Which Excursion would you like to book?");
         string x = Console.ReadLine();
-
         //These are hard coded in values because I didnt have the resources to do read in files
         //You can read in from a file 
-        if ( String.Compare( x, "Monument") == 0 )
+        bool validInput3 = false;
+        while (validInput3 == false)
         {
-            int cost = 200;
-            string con = "24251";
-            Excursion_Option exc = new Excursion_Option(x, cost);
-            exc.printConfirmation(cost, con, numppl);
+            if (String.Compare(x, "Monument Tour") == 0)
+            {
+                int cost = 202;
+                string con = "848251";
+                Excursion_Option exc = new Excursion_Option(x, cost);
+                exc.printConfirmation(cost, con, numppl);
 
-            budget = budget - (cost * numppl);
-        }
-        if (String.Compare(x, "Art Museum") == 0)
-        {
-            int cost = 150;
-            string con = "24221";
-            Excursion_Option exc = new Excursion_Option(x, cost);
-            exc.printConfirmation(cost, con, numppl);
+                budget = budget - (cost * numppl);
+                validInput3 = true;
+            }
+            if (String.Compare(x, "Art Museum") == 0)
+            {
+                int cost = 152;
+                string con = "24221";
+                Excursion_Option exc = new Excursion_Option(x, cost);
+                exc.printConfirmation(cost, con, numppl);
 
-            budget = budget - (cost * numppl);
+                budget = budget - (cost * numppl);
+                validInput3 = true;
+            }
+            if (String.Compare(x, "Smithsonian National Air and Space Museum") == 0)
+            {
+                int cost = 0;
+                string con = "220391";
+                Excursion_Option exc = new Excursion_Option(x, cost);
+                exc.printConfirmation(cost, con, numppl);
+
+                budget = budget - (cost * numppl);
+                validInput3 = true;
+            }
+            if (String.Compare(x, "Night Tours") == 0)
+            {
+                int cost = 53;
+                string con = "223921";
+                Excursion_Option exc = new Excursion_Option(x, cost);
+                exc.printConfirmation(cost, con, numppl);
+
+                budget = budget - (cost * numppl);
+                validInput3 = true;
+            }
+            if(validInput3 == false)
+            {
+                Console.WriteLine("Invalid Input\n");
+                x = Console.ReadLine();
+            }
         }
 
         bool validInput = false;
         while ( validInput == false )
         {
-            Console.WriteLine("Would you like to book public transportation?");
+            Console.WriteLine("Would you like to book public transportation? Y or N");
             string trav = Console.ReadLine();
             if (trav == "Y")
             {
@@ -104,7 +134,7 @@ public class Excursions
                         ride.startTime = 1;
                         ride.endTime = 3;
                         budget = ride.bookTransport(numppl, budget);
-                        ride.printInformation();
+                        //ride.printInformation();
                         validInput2 = true;
                     }
                     else if (rideType == "Bus")
@@ -117,7 +147,7 @@ public class Excursions
                         ride.startTime = 1;
                         ride.endTime = 4;
                         budget = ride.bookTransport(numppl, budget);
-                        ride.printInformation();
+                        //ride.printInformation();
                         validInput2 = true;
                     }
                     

@@ -32,6 +32,11 @@ public class Airport
     }
 	public int bookDestinationFlight(int budgetTotal)
 	{
+        if ( too.book == true)
+        {
+            Console.WriteLine("Destiantion flight is alread booked");
+            return budgetTotal;
+        }
         IEnumerable<string> flights;
         IEnumerable<string> book;
         //Find out how to get dulles as string
@@ -78,6 +83,11 @@ public class Airport
 
 	public int bookReturnFlight(int budgetTotal)
 	{
+        if (reTurn.book == true)
+        {
+            Console.WriteLine("Return flight is alread booked");
+            return budgetTotal;
+        }
         IEnumerable<string> flights;
         IEnumerable<string> book;
 

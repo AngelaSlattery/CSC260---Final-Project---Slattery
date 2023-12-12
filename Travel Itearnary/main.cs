@@ -18,7 +18,7 @@ namespace FinalProject
             Console.WriteLine("How many people are going?\n");
             string ppl = Console.ReadLine();
             int pplnum = Convert.ToInt32(ppl);
-            Console.WriteLine("What is your budget (# amount)?\n");
+            Console.WriteLine("What is your budget ($ amount)?\n");
             string strinbud = Console.ReadLine();
             int bud = Convert.ToInt32(strinbud);
             Console.WriteLine("How many days will you travel?\n");

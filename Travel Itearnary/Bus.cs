@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 class Bus : Transportation
 {
-	int stopsNeeded;
-	int totalCost;
-    bool booked = false;
+	public int stopsNeeded;
+	public int totalCost = 1;
+    private bool booked = false;
     string ticketConfirm;
 
     public override int bookTransport(int num, int budget)
@@ -17,11 +17,15 @@ class Bus : Transportation
         stopsNeeded = stopsNeeded * 30;
         totalCost = (stopsNeeded * 2);
         totalCost = totalCost * num;
-        if (totalCost >= budget)
+        if (totalCost < budget)
         {
             booked = true;
             ticketConfirm = "12432DBW";
             budget = budget - totalCost;
+        }
+        else
+        {
+            Console.WriteLine("Cannot book public transportation\n");
         }
         return budget;
     }

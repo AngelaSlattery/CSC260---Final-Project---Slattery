@@ -1,0 +1,253 @@
+<Project>
+  <Name>Final Project</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.ClassDiagram" assembly="NClass.DiagramEditor, Version=2.8.0.1, Culture=neutral, PublicKeyToken=null">
+    <Name>Travel Itearnary</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Travel_Itearnary</Name>
+        <Access>Public</Access>
+        <Location left="659" top="357" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string location</Member>
+        <Member type="Field">public int howManyTravelers</Member>
+        <Member type="Field">public int budgetTotal</Member>
+        <Member type="Field">int howManyDays</Member>
+        <Member type="Field">public int remainingBudget</Member>
+        <Member type="Field">bool rental_car = false</Member>
+        <Member type="Field">public Airport Airport1 = new Airport()</Member>
+        <Member type="Field">public Excursion excursion1</Member>
+        <Member type="Constructor">public Travel_Itearnary(string location, int people, int budget, int day)</Member>
+        <Member type="Method">public void bookFlight()</Member>
+        <Member type="Method">public void printTripFinances()</Member>
+        <Member type="Method">public void bookExcursion()</Member>
+        <Member type="Method">public void bookRentalCar()</Member>
+        <Member type="Method">public bool printMenu()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Airport</Name>
+        <Access>Public</Access>
+        <Location left="189" top="275" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int seatNum</Member>
+        <Member type="Field">public Flight_Details too = new Flight_Details()</Member>
+        <Member type="Field">public Flight_Details reTurn = new Flight_Details</Member>
+        <Member type="Field">string location</Member>
+        <Member type="Constructor">public Airport()</Member>
+        <Member type="Method">public void pickAirport()</Member>
+        <Member type="Method">public int bookDestinationFlight(int budgetTotal)</Member>
+        <Member type="Method">public int bookReturnFlight(int budgetTotal)</Member>
+        <Member type="Method">public int flightMenu(int budgetTotal)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Flight_Details</Name>
+        <Access>Public</Access>
+        <Location left="189" top="636" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public bool book = false</Member>
+        <Member type="Field">public string airline</Member>
+        <Member type="Field">public string flightNum</Member>
+        <Member type="Field">public string day</Member>
+        <Member type="Field">date arrivalTime</Member>
+        <Member type="Field">string departTime</Member>
+        <Member type="Field">public int flightCost</Member>
+        <Member type="Method">public void printFlightCost()</Member>
+        <Member type="Method">public void flightCheckIn()</Member>
+        <Member type="Method">public void checkIn()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Transportation</Name>
+        <Access>Public</Access>
+        <Location left="1090" top="386" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public date allocatedTime</Member>
+        <Member type="Field">public string startingPoint</Member>
+        <Member type="Field">public string endingPoint</Member>
+        <Member type="Field">public int startTime</Member>
+        <Member type="Field">public int endTime</Member>
+        <Member type="Method">public abstract void printInformation()</Member>
+        <Member type="Method">public abstract int bookTransport(int num, int totalCost)</Member>
+        <Member type="Constructor">public Transportation()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Metro</Name>
+        <Access>Public</Access>
+        <Location left="1330" top="751" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int stopsNeeded</Member>
+        <Member type="Field">public int totalCost = 3</Member>
+        <Member type="Field">private bool booked</Member>
+        <Member type="Field">string ticketConfirm</Member>
+        <Member type="Method">public override int bookTransport(int num, int budget)</Member>
+        <Member type="Method">public override void printInformation()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Bus</Name>
+        <Access>Public</Access>
+        <Location left="1330" top="50" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int stopsNeeded</Member>
+        <Member type="Field">public int totalCost = 1</Member>
+        <Member type="Field">private bool booked = false</Member>
+        <Member type="Field">string ticketConfirm</Member>
+        <Member type="Method">public override int bookTransport(int num, int budget)</Member>
+        <Member type="Method">public override void printInformation()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Rental_Car</Name>
+        <Access>Public</Access>
+        <Location left="1469" top="412" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public bool book</Member>
+        <Member type="Field">public int numVec</Member>
+        <Member type="Field">public string confirmationCode</Member>
+        <Member type="Method">public override int bookTransport(int num, int budget)</Member>
+        <Member type="Method">public override void printInformation()</Member>
+        <Member type="Method">private int checkSize(int riders)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Excursions</Name>
+        <Access>Public</Access>
+        <Location left="863" top="10" />
+        <Size width="217" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string location</Member>
+        <Member type="Field">string day</Member>
+        <Member type="Field">public int numppl</Member>
+        <Member type="Field">public List&lt;Excursion_Option&gt; bookedExcursions</Member>
+        <Member type="Constructor">public Excursions(int numDays, string location, int numPpl)</Member>
+        <Member type="Method">public int excursions_Menu(int budget)</Member>
+        <Member type="Method">public void printExcursionsOptions()</Member>
+        <Member type="Method">public int bookExcursions(int budget)</Member>
+        <Member type="Method">public void printBookedExcursions()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Excursion_Option</Name>
+        <Access>Public</Access>
+        <Location left="455" top="24" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string name</Member>
+        <Member type="Field">int excursionCost</Member>
+        <Member type="Field">bool booked</Member>
+        <Member type="Field">private string confirmationNum</Member>
+        <Member type="Constructor">public Excursion_Option(string name, int cost)</Member>
+        <Member type="Method">public void printExecursion()</Member>
+        <Member type="Method">public int transportation()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>payment</Name>
+        <Access>Public</Access>
+        <Location left="744" top="861" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private string cardNumber</Member>
+        <Member type="Field">private int CIV</Member>
+        <Member type="Field">private int expired</Member>
+        <Member type="Method">public string Card()</Member>
+        <Member type="Method">public int security()</Member>
+        <Member type="Method">public int exp()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Payment class is seperate because it privae information containing a users credit card information.  Example of encapsulation </Text>
+        <Location left="526" top="816" />
+        <Size width="198" height="87" />
+      </Entity>
+    </Entities>
+    <Containers />
+    <Relationships>
+      <Relationship type="Association" first="0" second="7">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>918</X>
+          <Y>267</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>1*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="5">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>0*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="6">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1425</X>
+          <Y>518</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>0*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndMultiplicity>1*</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

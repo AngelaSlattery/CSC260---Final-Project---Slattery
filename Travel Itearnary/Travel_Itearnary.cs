@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,7 @@ public class Travel_Itearnary
         remainingBudget = Airport1.flightMenu( this.remainingBudget );
 	}
 
-	public void printItearnary()
+	public void printTripFinances()
 	{
         Console.WriteLine("Location: \n" + location);
         Console.WriteLine("Starting Budget: \n" + budgetTotal);
@@ -47,22 +48,21 @@ public class Travel_Itearnary
     public void bookExcursion()
     {
         //Make it off the locations of the city
-        remainingBudget = excursion1.excursions_Menu( this.remainingBudget);
+        this.remainingBudget = excursion1.excursions_Menu( this.remainingBudget);
     }
 
-    public void bookTransportation()
+    public void bookRentalCar()
     {
         if (rental_car == false)
         {
-            Console.WriteLine("Would you like to rent a rental car? Y or N\n");
-            string rentalC = Console.ReadLine();
-            if(rentalC == "Y")
-            {
-                rental_car = true;
-                remainingBudget = remainingBudget - 600;
-            }
+             rental_car = true;
+             Transportation car = new Rental_Car();
+             remainingBudget = car.bookTransport( howManyTravelers, remainingBudget);
         }
-
+        else
+        {
+            Console.WriteLine("Rental Car is already Booked\n"); 
+        }
     }
     
     public bool printMenu()
@@ -71,9 +71,10 @@ public class Travel_Itearnary
         string x;
         Console.WriteLine("1. Book Excursion\n");
         Console.WriteLine("2. Book Flight\n");
-        Console.WriteLine("3. Book Transportation\n");
-        Console.WriteLine("4. Print Itinerary\n");
-        Console.WriteLine("5. End Program\n");
+        Console.WriteLine("3. Book Rental Car\n");
+        Console.WriteLine("4. Print Trip Finances\n");
+        Console.WriteLine("5. Increase Budget\n");
+        Console.WriteLine("6. End Program\n");
         x = Console.ReadLine();
 
         switch (x)
@@ -85,11 +86,19 @@ public class Travel_Itearnary
                 bookFlight();
                 break;
             case "3":
+                bookRentalCar();
                 break;
             case "4":
-                printItearnary();
+                printTripFinances();
                 break;
             case "5":
+                Console.WriteLine("By how much?");
+                string increase = Console.ReadLine();
+                int increaseInt = Convert.ToInt32(increase);
+                budgetTotal = increaseInt + budgetTotal;
+                remainingBudget = increaseInt + remainingBudget;
+                break;
+            case "6":
                 endProgram = true;
                 break;
 
